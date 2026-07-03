@@ -85,7 +85,9 @@
   .stat .l{color:var(--body);font-size:13.5px;margin-top:8px}
   .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
   .rev{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}.rev .st{color:var(--orange);letter-spacing:2px}.rev p{margin:12px 0 16px;font-size:15px;color:#3f3a33}.rev .who{color:var(--body);font-weight:600;font-size:13px;font-family:'Space Grotesk'}
-  .final{background:var(--orange);color:#fff;border-radius:34px;margin:0 24px;padding:64px 40px;text-align:center}
+  .final{background:var(--orange);color:#fff;border-radius:34px;margin:0 24px;padding:64px 40px;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+  .final>:not(.halo){position:relative;z-index:1}
+  .halo{position:absolute;top:0;left:0;width:520px;height:520px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,244,230,.55),rgba(255,244,230,0) 68%);mix-blend-mode:screen;opacity:0;transition:opacity .4s ease;transform:translate3d(-9999px,-9999px,0);will-change:transform,opacity;z-index:0}
   .final h2{font-family:'Space Grotesk';font-weight:700;font-size:clamp(30px,4.6vw,54px);letter-spacing:-.02em;line-height:1.02}.final p{margin:14px auto 0;max-width:520px;color:rgba(255,255,255,.92);font-size:17px}
   .final .fbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}.final .fb1{background:#fff;color:var(--orange-d)}.final .fb2{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.42)}
   footer{margin-top:26px;background:linear-gradient(#F1EFEB,#EBE8E2);border-top:1px solid var(--line)}
@@ -97,7 +99,7 @@
   .fi{flex:0 0 auto;width:32px;height:32px;border-radius:10px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}.fi svg{width:15px;height:15px;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .flics{margin-top:22px}.flics em{display:block;font-style:normal;color:var(--body);font-size:12.5px;font-weight:600;margin-bottom:9px}.flics span{display:inline-block;font-family:'Space Grotesk';font-size:11.5px;font-weight:600;color:var(--body);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin:0 6px 6px 0}
   .fcol h4{font-family:'Space Grotesk';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:15px}.fcol ul{list-style:none}.fcol li{margin-bottom:11px;color:var(--body);font-size:14px}.fcol a:hover{color:var(--orange)}
-  .fcta{background:var(--ink);color:#fff;border-radius:18px;padding:22px}.fcta .k{font-family:'Space Grotesk';font-weight:700;font-size:16px}.fcta p{color:#B4AA99;font-size:13px;margin:6px 0 15px}.fcta a{display:inline-flex;gap:8px;background:var(--orange);color:#fff;border-radius:11px;padding:12px 16px;font-family:'Space Grotesk';font-weight:600;font-size:14px}.fcta a:hover{background:var(--orange-d)}
+  .fcta{background:var(--ink);color:#fff;border-radius:18px;padding:22px}.fcta .k{font-family:'Space Grotesk';font-weight:700;font-size:16px}.fcta p{color:#B4AA99;font-size:13px;margin:6px 0 15px}.fcta a{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:#fff;border-radius:11px;padding:13px 18px;font-family:'Space Grotesk';font-weight:700;font-size:14px;letter-spacing:.01em;transition:background .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease}.fcta a:hover{background:#fff;color:var(--orange-d);transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.32)}
   .fbot{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--body);font-size:12.5px}.fbot a:hover{color:var(--orange)}
   .mcall{display:none}
   @media(max-width:900px){.nlinks{display:none}.burger{display:block}.mmenu,.mscrim{display:block}.ncall{padding:0;width:46px;height:46px;justify-content:center}.ncall .ncall-t{display:none}.cards,.revs{grid-template-columns:1fr}.whygrid{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}section.blk{padding:58px 0}.airhero{height:calc(900px + 100vh)}.hov{max-width:none;justify-content:flex-start;align-items:flex-start;text-align:left;gap:14px;padding:92px 24px 0}.hcta{justify-content:flex-start}.hscrim{background:linear-gradient(180deg,rgba(239,236,230,.97),rgba(239,236,230,.7) 28%,rgba(239,236,230,.12) 56%,transparent 78%)}.hlogo{display:none}.htag{font-size:clamp(22px,6vw,30px);max-width:340px;line-height:1.15}.hsub{font-size:15px;max-width:340px}.hcta{width:100%}
@@ -134,7 +136,7 @@
     <img class="hlogo" src="./logo.svg" alt="Frameworks Services, HVAC and Plumbing">
     <h1 class="htag disp"><span class="cw">Comfort</span> <span class="cw">you</span> <span class="cw">can</span> <span class="cw">count</span> <span class="cw">on.</span></h1>
     <p class="hsub">Trusted HVAC and plumbing for <span style="color:var(--orange);font-weight:600">Tampa Bay</span> homeowners. Twenty years of prompt, professional work and fixes that last.</p>
-    <div class="hcta"><a class="btn btn-p" href="#quote">Request service →</a><a class="btn hghost" href="tel:+18137104400">☎ 813-710-4400</a></div>
+    <div class="hcta"><a class="btn btn-p" href="#quote">Request service →</a><a class="btn hghost" href="tel:+18137104400">Call 813-710-4400</a></div>
   </div>
   <div class="hcue">Scroll</div>
 </div></section>
@@ -165,7 +167,7 @@
   </div>
 </div></section>
 
-<section id="quote"><div class="final ru"><h2 class="disp">Hot, leaking, or just not right?</h2><p>Tell us what's going on. We'll take it from there, usually the same day.</p><div class="fbtns"><a class="btn fb1" href="#">Request service →</a><a class="btn fb2" href="tel:+18137104400">☎ 813-710-4400 · 24/7</a></div></div></section>
+<section id="quote"><div class="final ru"><div class="halo" aria-hidden="true"></div><h2 class="disp">Hot, leaking, or just not right?</h2><p>Tell us what's going on. We'll take it from there, usually the same day.</p><div class="fbtns"><a class="btn fb1" href="#">Request service →</a><a class="btn fb2" href="tel:+18137104400">Call 813-710-4400 · 24/7</a></div></div></section>
 
 <footer><div class="fin">
   <div class="fgrid">
@@ -179,12 +181,12 @@
       <div class="flics"><em>Fully licensed &amp; insured</em><span>CGC1509998</span><span>CFC1427303</span><span>CMC1250042</span></div></div>
     <div class="fcol"><h4>Services</h4><ul><li><a href="#">Cooling</a></li><li><a href="#">Heating</a></li><li><a href="#">HVAC Maintenance</a></li><li><a href="#">Indoor Air Quality</a></li><li><a href="#">Duct Cleaning</a></li><li><a href="#">Plumbing</a></li></ul></div>
     <div class="fcol"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Reviews</a></li><li><a href="#">Service area</a></li><li><a href="#">Contact</a></li></ul></div>
-    <div class="fcol"><h4>24/7 service</h4><div class="fcta"><div class="k">Need help now?</div><p>Real people answer the phone, day or night.</p><a href="tel:+18137104400">☎ 813-710-4400</a></div></div>
+    <div class="fcol"><h4>24/7 service</h4><div class="fcta"><div class="k">Need help now?</div><p>Real people answer the phone, day or night.</p><a href="tel:+18137104400">Call 813-710-4400</a></div></div>
   </div>
   <div class="fbot"><span>© 2026 Frameworks Services · Tampa, FL. All rights reserved.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Sitemap</a></span></div>
 </div></footer>
 </main>
-<div class="mcall"><a class="c" href="tel:+18137104400">☎ Call</a><a class="r" href="#quote">Request service</a></div>
+<div class="mcall"><a class="c" href="tel:+18137104400">Call</a><a class="r" href="#quote">Request service</a></div>
 
 <script>
   document.documentElement.classList.add('js');
@@ -237,6 +239,34 @@
     menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ setOpen(false); }); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') setOpen(false); });
     addEventListener('resize',function(){ if(window.innerWidth>900) setOpen(false); },{passive:true});
+  })();
+
+  // cursor-trailing halo: damped glow behind the CTA, one per section, desktop + motion-ok only
+  (function(){
+    var el=document.querySelector('#quote .final'), halo=el&&el.querySelector('.halo');
+    if(!el||!halo) return;
+    var fine=matchMedia('(hover:hover) and (pointer:fine)'), rm=matchMedia('(prefers-reduced-motion:reduce)');
+    var R=260, rect=null, tx=0,ty=0,x=0,y=0, raf=0, active=false, bound=false;
+    function draw(){ halo.style.transform='translate3d('+(x-R)+'px,'+(y-R)+'px,0)'; }
+    function frame(){ x+=(tx-x)*0.12; y+=(ty-y)*0.12; draw();
+      if(active||Math.abs(tx-x)>0.5||Math.abs(ty-y)>0.5){ raf=requestAnimationFrame(frame); } else { raf=0; } }
+    function onScroll(){ rect=el.getBoundingClientRect(); }
+    function move(e){ if(!rect) rect=el.getBoundingClientRect(); tx=e.clientX-rect.left; ty=e.clientY-rect.top; if(!raf) raf=requestAnimationFrame(frame); }
+    function enter(e){ active=true; rect=el.getBoundingClientRect();
+      tx=x=e.clientX-rect.left; ty=y=e.clientY-rect.top; draw(); halo.style.opacity='.9';
+      addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll,{passive:true});
+      if(!raf) raf=requestAnimationFrame(frame); }
+    function leave(){ active=false; halo.style.opacity='0';
+      removeEventListener('scroll',onScroll); removeEventListener('resize',onScroll); }
+    function bind(){ if(bound)return; bound=true;
+      el.addEventListener('pointerenter',enter); el.addEventListener('pointermove',move);
+      el.addEventListener('pointerleave',leave); el.addEventListener('pointercancel',leave); }
+    function unbind(){ if(!bound)return; bound=false; leave();
+      el.removeEventListener('pointerenter',enter); el.removeEventListener('pointermove',move);
+      el.removeEventListener('pointerleave',leave); el.removeEventListener('pointercancel',leave); }
+    function apply(){ (fine.matches && !rm.matches) ? bind() : unbind(); }
+    addEventListener('blur',leave); document.addEventListener('visibilitychange',function(){ if(document.hidden) leave(); });
+    rm.addEventListener('change',apply); apply();
   })();
 </script>
 </body>
